@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <!-- Css -->
+    <link rel="stylesheet" type="text/css" href="style/css/main.css">
+    <link rel="stylesheet" type="text/css" href="style/css/headers.css">
+    <link rel="stylesheet" type="text/css" href="style/css/drawer.css">
+    <link rel="stylesheet" type="text/css" href="style/css/buttons.css">
+  
+    <!-- Localization -->
+    <link rel="resource" type="application/l10n" href="locales/app.ini" />
+    <link rel="resource" type="application/l10n" href="locales/date.ini" />
+    <script defer src="scripts/lib/l10n.js"></script>
+    <script defer src="scripts/lib/l10n_date.js"></script>
+
+    <!-- Title of the page -->
+    <title data-l10n-id="myapp">My App</title>
+    
+  </head>
+  
+  <body>
+    <section id="index" data-position="current">
+    
+      <section data-type="sidebar" role="region">
+	<header>
+	  <menu type="toolbar">
+	    <a href="#"><span class="icon icon-forward">forward</span></a>
+	  </menu>
+	  <h1 data-l10n-id="menu">Menu</h1>
+	</header>
+	<nav>
+	  <ul>
+	    <li><a href="#" data-l10n-id="back">Go back</a></li>
+	    <li><a id="quit" data-l10n-id="quit">Quit</a></li>
+	  </ul>
+	  <h2 data-l10n-id="about">About</h2>
+	  <ul>
+	    <li><a href="#" data-l10n-id="credits">Credits</a></li>
+	    <li><a href="#" data-l10n-id="licence">License</a></li>
+	    <li><a href="https://github.com/ewilly">Github</a></li>
+	  </ul>
+	</nav>
+      </section> <!-- end sidebar -->
+
+      <section id="drawer" role="region">    
+	<header class="fixed">
+	  <button><span class="icon icon-menu">menu</span></button>
+	  <a href="#"><span class="icon icon-menu">menu</span></a>
+	  <a href="#drawer"><span class="icon icon-menu">menu</span></a>
+	  <menu type="toolbar">
+	    <button id="quit-btn"><span class="icon icon-close">quit</span></button>
+	  </menu>
+	  <h1 data-l10n-id="myapp">My App</h1>
+	</header><!--  end drawer header -->
+	
+	<article class="content scrollable header">
+	
+	  <h1 data-l10n-id="welcome">Welcome ?</h1>
+	  <p id="timer" data-l10n-id="starting">starting ?</p>
+	  <hr style="color:firebrick; background-color:firebrick; height:3px;" /> 
+	  <h1 data-l10n-id="script_title">Example of JavaScript</h1>
+	  <h2 data-l10n-id="script_description" >Click Date to display current day, date, and time.</h2>
+	  <button type="button" onclick="printDate()">Date</button>
+	  <span id="date"></span>
+
+	</article> <!-- end drawer article -->
+	
+      </section> <!-- end drawer -->
+      
+    </section> <!-- end index -->
+    
+    <script src="scripts/app.js"></script>
+    
+  </body>
+</html>
