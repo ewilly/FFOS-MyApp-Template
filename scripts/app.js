@@ -21,6 +21,7 @@ function printDate() {
   var formatted = f.localeFormat(d, format);
   document.getElementById("date").textContent = formatted;
   //alert( formatted );
+  date_printed = true;
 }
 
 function tickTimer() {
@@ -38,6 +39,8 @@ var startTime = new Date();
 var timer = document.getElementById('timer');
 setInterval(tickTimer, 1000);
 
+var date_printed = false;
+
 var btnQuit = document.querySelector("#quit-btn");
 btnQuit.addEventListener ('click', function () {
   window.close()
@@ -45,4 +48,18 @@ btnQuit.addEventListener ('click', function () {
 
 document.getElementById('quit').addEventListener('click', function () {
   window.close()
+});
+
+document.getElementById('switch_lang').addEventListener('click', function () {
+  var lang_current = document.webL10n.getLanguage();
+  var lang1 = "fr";
+  var lang2 = "en";
+  if (lang_current == lang1) {
+      document.webL10n.setLanguage(lang2);
+  } else {
+      document.webL10n.setLanguage(lang1);
+  };
+  if (date_printed == true) {
+    printDate();
+  };
 });
